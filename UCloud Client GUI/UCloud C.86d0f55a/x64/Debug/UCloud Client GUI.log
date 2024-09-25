@@ -1,0 +1,10 @@
+﻿  Button.cpp
+  GuiHandler.cpp
+  TextBox.cpp
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\GUI\TextBox.cpp(65,28): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+  main.cpp
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\main.cpp(371,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  UCloud Client GUI.vcxproj -> C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\UCloud Client GUI.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

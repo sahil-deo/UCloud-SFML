@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9F14DDA4-678D-4A46-9878-AE9715AD87EE}|UCloud Client.vcxproj|C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9F14DDA4-678D-4A46-9878-AE9715AD87EE}|UCloud Client.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-30T14:36:40.599Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

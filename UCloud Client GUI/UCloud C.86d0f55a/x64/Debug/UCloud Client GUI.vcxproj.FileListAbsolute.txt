@@ -1,0 +1,11 @@
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\sfml-graphics-d-2.dll
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\sfml-window-d-2.dll
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\sfml-system-d-2.dll
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\freetyped.dll
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\zlibd1.dll
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\bz2d.dll
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\libpng16d.dll
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\brotlidec.dll
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\brotlicommon.dll
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Debug\sfml-network-d-2.dll
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\UCloud C.86d0f55a\x64\Debug\UCloud C.4044436B.Up2Date

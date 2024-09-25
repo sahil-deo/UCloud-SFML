@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client\main.cpp(238,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  UCloud Client.vcxproj -> C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Server\x64\Debug\UCloud Client.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

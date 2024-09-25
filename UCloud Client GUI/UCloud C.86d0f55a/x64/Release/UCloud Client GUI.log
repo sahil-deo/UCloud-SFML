@@ -1,0 +1,10 @@
+﻿  main.cpp
+C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\main.cpp(405,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating code
+  3 of 822 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    3 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  UCloud Client GUI.vcxproj -> C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud Client GUI\x64\Release\UCloud Client GUI.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
