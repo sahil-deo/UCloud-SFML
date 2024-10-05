@@ -32,9 +32,12 @@ void connectSocket(std::string ip);
 void sendData(std::shared_ptr<sf::TcpSocket> socket);
 
 void sendFile(std::shared_ptr<sf::TcpSocket> socket, std::string filePath);
+
 void sendFolder(std::shared_ptr<sf::TcpSocket> socket, std::string folderPath);
 
 std::string getExtention(std::string filePath);
+
+std::string removeQuotes(std::string filePath);
 
 #pragma endregion
 
@@ -183,6 +186,8 @@ void sendData(std::shared_ptr<sf::TcpSocket> socket)
 
             if (_sendButton.isReleased() == true) {
                 path = _filePath.getString();
+
+                path = removeQuotes(path);
 
                 std::filesystem::path checkPath(path);
 
@@ -424,5 +429,12 @@ std::string getExtention(std::string filePath)
     return extention;
 }
 
+std::string removeQuotes(std::string filePath) {
 
-//C:\Users\shree\Videos\Bandi Opts\bandicam 2024-07-06 15-53-31-470.mp4
+    if (filePath[0] == '\"' && filePath[filePath.length() - 1] == '\"') {
+        filePath.erase(filePath.begin());
+        filePath.erase(filePath.end() - 1);
+        return filePath;
+    }
+    return filePath;
+}

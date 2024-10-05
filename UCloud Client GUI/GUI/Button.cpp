@@ -164,8 +164,6 @@ void Button::eventHandler(sf::RenderWindow* window, sf::Event* event)
         if (_released == false && getGlobalBounds().contains(window->mapPixelToCoords(sf::Mouse::getPosition(*window)))) {
         
             _released = true;
-            std::cout << "Release True\n";
-        
         }
 
     }
@@ -189,7 +187,6 @@ void Button::Render(sf::RenderWindow* window)
         if (_released)
         {
             _released = false;
-        std::cout << "Release False\n";
         }
 
     }

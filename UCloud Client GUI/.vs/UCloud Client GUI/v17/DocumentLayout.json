@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\GUI\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|solutionrelative:GUI\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\GUI\\includes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|solutionrelative:GUI\\includes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\GUI\\Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|solutionrelative:GUI\\Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\GUI\\includes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|solutionrelative:GUI\\includes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\GUI\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|solutionrelative:GUI\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86D0F55A-41E5-4D7F-A8DF-1D597512DBEF}|UCloud Client GUI.vcxproj|C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\GUI\\TextBox.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +42,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Button.h",
               "DocumentMoniker": "C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\GUI\\Button.h",
               "RelativeDocumentMoniker": "GUI\\Button.h",
@@ -54,15 +54,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Button.cpp",
               "DocumentMoniker": "C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\GUI\\Button.cpp",
               "RelativeDocumentMoniker": "GUI\\Button.cpp",
               "ToolTip": "C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\GUI\\Button.cpp",
               "RelativeToolTip": "GUI\\Button.cpp",
-              "ViewState": "AQIAAIYAAAAAAAAAAAAAAIkAAAAlAAAA",
+              "ViewState": "AQIAAK0AAAAAAAAAAAAAAMMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-05T19:38:41.562Z"
+              "WhenOpened": "2024-09-05T19:38:41.562Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -90,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "includes.h",
               "DocumentMoniker": "C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\GUI\\includes.h",
               "RelativeDocumentMoniker": "GUI\\includes.h",
@@ -98,17 +99,18 @@
               "RelativeToolTip": "GUI\\includes.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-05T19:36:55.377Z"
+              "WhenOpened": "2024-09-05T19:36:55.377Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\shree\\Desktop\\Code\\c\u002B\u002B\\UCloud SFML\\UCloud Client GUI\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAHYBAAAAAAAAAAAAAI0BAAAJAAAA",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAwNsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-08-30T14:59:23.465Z",
               "EditorCaption": ""
