@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include <SFML/Network.hpp>
 #include <SFML/System.hpp>
+#include <SFML/Network.hpp>
 
 #include <thread>
 #include <vector>
@@ -126,14 +126,26 @@ void sendFile(std::shared_ptr<sf::TcpSocket> socket)
         data.push_back(c);
     }
 
+    char ack[3];
+    std::size_t recv = 0;
     if (socket->send(dataLen.c_str(), dataLen.length()) != sf::Socket::Done)
     {
         throw("Unable To Send Meta Data");
     }
 
+    if (socket->receive(ack, 3, recv) != sf::Socket::Done)
+    {
+        throw("Unable To Acknowdge");
+    }
+
     if (socket->send(extention.c_str(), extention.length()) != sf::Socket::Done)
     {
         throw("Unable To Send Meta Data");
+    }
+
+    if (socket->receive(ack, 3, recv) != sf::Socket::Done)
+    {
+        throw("Unable To Acknowdge");
     }
 
     if (socket->send(data.c_str(), data.length()) != sf::Socket::Done)
@@ -143,13 +155,12 @@ void sendFile(std::shared_ptr<sf::TcpSocket> socket)
 
     std::cout << "\nSending Data...\nDo Not Close This Window...\n";
 
-    char ack[3];
-    std::size_t recv = 0;
 
     if (socket->receive(ack, 3, recv) != sf::Socket::Done)
     {
         throw("Unable To Acknowdge");
     }
+
     std::cout << "Data Sent!\n\n";
 }
 

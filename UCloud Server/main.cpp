@@ -1,8 +1,7 @@
-#include <iostream>
-
-#include <SFML/Network.hpp>
 #include <SFML/System.hpp>
+#include <SFML/Network.hpp>
 
+#include <iostream>
 #include <thread>
 #include <fstream>
 #include <ctime>
@@ -16,15 +15,30 @@ void receiveData(std::shared_ptr<sf::TcpSocket> socket);
 
 // Helper Functions
 std::string getTime();
+std::string getTimeForFileName();
+//Store Data Functions
+std::string getPassword();
 
 std::mutex clientMutex;
 std::vector<std::thread> clientThreads;
+
+std::string _password;
+
+std::ofstream logger;
 
 int main()
 {
     std::cout << "Welcome to UCloud Server!\n";
     std::cout << "--------------------------\n";
     std::cout << "Server is starting\n";
+    std::cout << "Connect client to IP: " << sf::IpAddress::getLocalAddress().toString() << "\n";
+
+    _password = "";
+    _password = getPassword();
+    std::cout << "Password: " << _password << "\n";
+
+    logger.open("UCloud Server Logs.txt", std::ios::app);
+    logger << getTime() << ": Server Started" << "\n";
 
     startServer();
 }
@@ -49,9 +63,26 @@ void startServer()
             return;
         }
 
-        std::cout << "Connected to Client\n";
-        std::lock_guard<std::mutex> lock(clientMutex);
-        clientThreads.emplace_back(std::thread(receiveData, client));
+        char _clientPassword[100] = "";
+        size_t i;
+        client->receive(_clientPassword, 100, i);
+        if (_clientPassword == _password) {
+            client->send("1", 1);
+            std::cout << "Connected to Client: " << client->getRemoteAddress() << "\n";
+            logger << getTime() << ": Connected to Client: " << client->getRemoteAddress()<< "\n";
+            
+            std::lock_guard<std::mutex> lock(clientMutex);
+            clientThreads.emplace_back(std::thread(receiveData, client));
+        }
+        else {
+            client->send("0", 1);
+            std::cout << client->getRemoteAddress() << " tried to Connect via an Invalid Password\n";
+            logger << getTime() <<  ": " << client->getRemoteAddress() << " tried to Connect via an Invalid Password\n";
+            
+            client->disconnect();
+        }
+        
+
     }
 
     for (std::thread& Thread : clientThreads)
@@ -83,7 +114,6 @@ void receiveData(std::shared_ptr<sf::TcpSocket> socket)
             }
 
             dataLen = data;
-            std::cout << dataLen << ":" << data << "\n";
             dataLenInt = stoi(dataLen.substr(1, dataLen.length() - 1));
 
             std::cout << "Receiving Data...\n";
@@ -145,7 +175,7 @@ void receiveData(std::shared_ptr<sf::TcpSocket> socket)
             }
 
             std::string fileName = "CloudImage ";
-            fileName.append(getTime());
+            fileName.append(getTimeForFileName());
             fileName.append("." + extention);
 
             std::ofstream file(fileName, std::ios_base::binary);
@@ -169,6 +199,8 @@ void receiveData(std::shared_ptr<sf::TcpSocket> socket)
                 throw("Unable To Acknowledge\n");
             }
 
+            logger << getTime() << ": Data of size " << dataLenInt << " bytes received from " << socket->getRemoteAddress() <<  "\n";
+
             delete[] data;
             delete[] fileData;
         }
@@ -177,13 +209,15 @@ void receiveData(std::shared_ptr<sf::TcpSocket> socket)
     {
         std::cout << "Exception";
         std::cout << e.what() << "\n";
-        std::cout << "Client " << socket->getRemoteAddress() << " closed!\n";
+        std::cout <<  "Client " << socket->getRemoteAddress() << " disconnected!\n";
+        logger << getTime() << ": Client " << socket->getRemoteAddress() << " disconnected\n";
         socket->disconnect();
         return;
     }
     catch (...)
     {
         std::cout << "Client " << socket->getRemoteAddress() << " closed!\n";
+        logger << getTime() <<  ": Client " << socket->getRemoteAddress() << " disconnected\n";
         socket->disconnect();
         return;
     }
@@ -192,7 +226,7 @@ void receiveData(std::shared_ptr<sf::TcpSocket> socket)
 std::string prevTime;
 int times = 0;
 
-std::string getTime()
+std::string getTimeForFileName()
 {
     // time format:
     //  year-month-date at hour-min-sec
@@ -202,8 +236,8 @@ std::string getTime()
 
     std::tm* time = std::localtime(&now);
 
-    Time.append(std::to_string(time->tm_year));
-    Time.append("-" + std::to_string(time->tm_mon));
+    Time.append(std::to_string(time->tm_year - 100));
+    Time.append("-" + std::to_string(time->tm_mon + 1));
     Time.append("-" + std::to_string(time->tm_mday));
     Time.append(" at ");
     Time.append(std::to_string(time->tm_hour));
@@ -223,3 +257,40 @@ std::string getTime()
     }
     return Time;
 }
+
+std::string getTime()
+{
+    // time format:
+    //  year-month-date at hour-min-sec
+    std::string Time;
+
+    time_t now = time(0);
+
+    std::tm* time = std::localtime(&now);
+
+    Time.append(std::to_string(time->tm_year - 100));
+    Time.append("-" + std::to_string(time->tm_mon + 1));
+    Time.append("-" + std::to_string(time->tm_mday));
+    Time.append(" at ");
+    Time.append(std::to_string(time->tm_hour));
+    Time.append("." + std::to_string(time->tm_min));
+    Time.append("." + std::to_string(time->tm_sec));
+
+    return Time;
+}
+
+std::string getPassword() {
+    std::fstream passwordFile("password.txt");
+    std::string password;
+    std::getline(passwordFile, password);
+    passwordFile.close();
+
+    if (password == "") {
+        return "PASSWORD";
+    }
+    else {
+        return password;
+    }
+
+}
+

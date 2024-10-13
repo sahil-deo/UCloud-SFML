@@ -21,6 +21,7 @@
 std::shared_ptr<sf::TcpSocket> clientSocket;
 sf::Socket::Status status;
 std::string _status;
+bool isWindowClosed;
 
 ///Threads
 std::thread connectThread;
@@ -45,9 +46,10 @@ std::string removeQuotes(std::string filePath);
 ///GUI Components
 #pragma region 
 
+TextBox _ipBox;
+TextBox _passwordBox;
 Button _connectButton("Connect");
 Button _sendButton("Send");
-TextBox _ipBox;
 TextBox _filePath;
 TextBox _statusText;
 GuiHandler _handler;
@@ -61,41 +63,68 @@ int main() {
     sf::Event event;
 
 
-    ///GUI Components
+    ///GUI Components 
     #pragma region 
-        _handler.addToHandler(&_connectButton);
-        _handler.addToHandler(&_sendButton);
         _handler.addToHandler(&_ipBox);
+        _handler.addToHandler(&_passwordBox);
+        _handler.addToHandler(&_connectButton);
         _handler.addToHandler(&_filePath);
+        _handler.addToHandler(&_sendButton);
         _handler.addToHandler(&_statusText);
     #pragma endregion
     
     ///Styling
     {
-        _ipBox.setPosition(10, 10);
-        _ipBox.setBoxSize(780, 24);
-        _ipBox.setPadding(4, 0);
+        sf::Font _font;
+        _font.loadFromFile("Font/YatraOne.ttf");
 
-        _connectButton.setPosition(10, 100);
-        _connectButton.setBoxSize(780, 24);
-        _connectButton.setPadding(4, 0);
+        _ipBox.setPosition(10, 20);
+        _ipBox.setBoxSize(780, 32);
+        _ipBox.setPadding(4, 4);
+        _ipBox.setBoxOutline(2.0f, sf::Color::Black);
+        _ipBox.setFont(_font);
 
-        _filePath.setPosition(10, 200);
-        _filePath.setBoxSize(780, 24);
-        _filePath.setPadding(4, 0);
+        _passwordBox.setPosition(10, 110);
+        _passwordBox.setBoxSize(780, 32);
+        _passwordBox.setPadding(4, 4);
+        _passwordBox.setBoxOutline(2.0f, sf::Color::Black);
+        _passwordBox.setFont(_font);
+        _passwordBox.setString("PASSWORD");
 
-        _sendButton.setPosition(10, 300);
-        _sendButton.setBoxSize(780, 24);
-        _sendButton.setPadding(4, 0);
+        _connectButton.setPosition(10, 200);
+        _connectButton.setBoxSize(780, 32);
+        _connectButton.setPadding(4, 4);
+        _connectButton.setBoxColor(sf::Color::Color(181, 218, 236));
+        _connectButton.setBoxDownColor(sf::Color::Color(122, 147, 159));
+        _connectButton.setBoxOutline(2.0f, sf::Color::Black);
+        _connectButton.setFont(_font);
+
+        _filePath.setPosition(10, 290);
+        _filePath.setBoxSize(780, 32);
+        _filePath.setPadding(4, 4);
+        _filePath.setBoxOutline(2.0f, sf::Color::Black);
+        _filePath.setFont(_font);
+
+        _sendButton.setPosition(10, 390);
+        _sendButton.setBoxSize(780, 32);
+        _sendButton.setPadding(4, 4);
+        _sendButton.setBoxColor(sf::Color::Color(181, 218, 236));
+        _sendButton.setBoxDownColor(sf::Color::Color(122, 147, 159));
+        _sendButton.setBoxOutline(2.0f, sf::Color::Black);
+        _sendButton.setFont(_font);
+
 
         _statusText.setString("Status: ");
-        _statusText.setPosition(10, 400);
-        _statusText.setBoxSize(780, 24);
-        _statusText.setPadding(4, 0);
-    }
+        _statusText.setPosition(10, 490);
+        _statusText.setBoxSize(780, 32);
+        _statusText.setPadding(4, 4);
+        _statusText.setBoxColor(sf::Color::White);
+        _statusText.setBoxOutline(2.0f, sf::Color::Black);
+        _statusText.setFont(_font);
+        }
 
     
-
+    isWindowClosed = false;
 
     while (window.isOpen())
     {
@@ -111,8 +140,8 @@ int main() {
         }
 
         if (_connectButton.isReleased()) {
-            connectSocket(_ipBox.getString());
             _connectButton.setEnabled(false);
+            connectSocket(_ipBox.getString());
         }
 
         if (_status == "Disconnected") {
@@ -129,9 +158,14 @@ int main() {
 	}
 
 
+    isWindowClosed = true;
+
     if (sendThread.joinable()) {
         sendThread.join();
     }
+
+
+
 
 }
 
@@ -143,12 +177,40 @@ void connectSocket(std::string ip) {
         //Implement Error
         _connectButton.setEnabled(true);
         _status = "Connection Error, Try again";
+        _statusText.setBoxColor(sf::Color::Color(255, 161, 161));
+
         clientSocket->disconnect();
 
     }
     else {
-        _status = "Connected";
-        sendThread = std::thread(sendData, clientSocket);
+        _status = "Connecting.. Authenticating Password";
+        _statusText.setBoxColor(sf::Color::Color(159, 255, 130));
+        
+        //Send Password
+
+        std::string _password = _passwordBox.getString();
+        if (_password == "") {
+            _password = "PASSWORD";
+        }
+        clientSocket->send(_password.c_str(), _password.length());
+
+        //Get Password Ack
+        char data[1];
+        size_t i;
+        clientSocket->receive(data, 1, i);
+
+
+        if (data[0] == '0') {
+            _statusText.setBoxColor(sf::Color::Color(255, 161, 161));
+            clientSocket->disconnect();
+            _status = "Invalid Password";
+            _connectButton.setEnabled(true);
+        }
+        else if(data[0] == '1') {
+            sendThread = std::thread(sendData, clientSocket);
+            _status = "Connected";
+        }
+
     }
 }
 
@@ -160,6 +222,10 @@ void sendData(std::shared_ptr<sf::TcpSocket> socket)
 
         while (true)
         {
+            if (isWindowClosed) {
+                break;
+            }
+
             std::string path = "";
 
             /*
@@ -199,8 +265,6 @@ void sendData(std::shared_ptr<sf::TcpSocket> socket)
                     sendFile(socket, path);
                 }
             }
-
-                
         }
     }
     catch (std::exception e)
@@ -208,17 +272,18 @@ void sendData(std::shared_ptr<sf::TcpSocket> socket)
         std::cout << e.what() << "\n";
         std::cout << "Disconnected from the server\n";
         _status = "Disconnected";
-
+        _statusText.setBoxColor(sf::Color::Color(255, 161, 161));
         socket->disconnect();
     }
     catch (...)
     {
         _status = "Disconnected";
         std::cout << "Disconnected from the server\n";
+        
         socket->disconnect();
     }
-}
 
+}
 
 
 void sendFile(std::shared_ptr<sf::TcpSocket> socket, std::string filePath)
@@ -277,6 +342,7 @@ void sendFile(std::shared_ptr<sf::TcpSocket> socket, std::string filePath)
 
     _status = "Sending Data";
 
+    _statusText.setBoxColor(sf::Color::White);
     char ack[3];
     std::size_t recv = 0;
 
@@ -314,9 +380,9 @@ void sendFile(std::shared_ptr<sf::TcpSocket> socket, std::string filePath)
     }
     _status = "Data Sent";
     std::cout << "Data Sent!\n\n";
+    _statusText.setBoxColor(sf::Color::Color(159, 255, 130));
+
 }
-
-
 
 void sendFolder(std::shared_ptr<sf::TcpSocket> socket, std::string folderPath)
 {
