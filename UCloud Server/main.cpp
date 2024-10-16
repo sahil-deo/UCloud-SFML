@@ -16,6 +16,7 @@ void receiveData(std::shared_ptr<sf::TcpSocket> socket);
 // Helper Functions
 std::string getTime();
 std::string getTimeForFileName();
+
 //Store Data Functions
 std::string getPassword();
 

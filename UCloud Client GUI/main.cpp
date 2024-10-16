@@ -318,6 +318,8 @@ void sendFile(std::shared_ptr<sf::TcpSocket> socket, std::string filePath)
     if (!file)
     {
         std::cout << "Invalid File Path\n";
+        _status = "Invalid Path";
+        _statusText.setBoxColor(sf::Color::Color(255, 161, 161));
         return;
     }
     _status = "Reading Data";
@@ -408,7 +410,10 @@ void sendFolder(std::shared_ptr<sf::TcpSocket> socket, std::string folderPath)
 
         if (!file)
         {
-     std::cout << "Invalid File Path\n";
+            std::cout << "Invalid File Path\n";
+            _status = "Invalid Path";
+            _statusText.setBoxColor(sf::Color::Color(255, 161, 161));
+            
             return;
         }
 
