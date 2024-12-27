@@ -59,7 +59,7 @@ GuiHandler _handler;
 
 int main() {
 	
-	sf::RenderWindow window(sf::VideoMode(800, 800), "NewWindow", sf::Style::Close | sf::Style::Titlebar);    
+	sf::RenderWindow window(sf::VideoMode(800, 800), "UCloud", sf::Style::Close | sf::Style::Titlebar);    
     sf::Event event;
 
 
@@ -75,15 +75,18 @@ int main() {
     
     ///Styling
     {
+        //Load Font
         sf::Font _font;
         _font.loadFromFile("Font/YatraOne.ttf");
 
+        //For IP Text Box
         _ipBox.setPosition(10, 20);
         _ipBox.setBoxSize(780, 32);
         _ipBox.setPadding(4, 4);
         _ipBox.setBoxOutline(2.0f, sf::Color::Black);
         _ipBox.setFont(_font);
 
+        //For Password Text Box
         _passwordBox.setPosition(10, 110);
         _passwordBox.setBoxSize(780, 32);
         _passwordBox.setPadding(4, 4);
@@ -91,6 +94,7 @@ int main() {
         _passwordBox.setFont(_font);
         _passwordBox.setString("PASSWORD");
 
+        //For Connect Button
         _connectButton.setPosition(10, 200);
         _connectButton.setBoxSize(780, 32);
         _connectButton.setPadding(4, 4);
@@ -99,12 +103,14 @@ int main() {
         _connectButton.setBoxOutline(2.0f, sf::Color::Black);
         _connectButton.setFont(_font);
 
+        //For File Path Text Box
         _filePath.setPosition(10, 290);
         _filePath.setBoxSize(780, 32);
         _filePath.setPadding(4, 4);
         _filePath.setBoxOutline(2.0f, sf::Color::Black);
         _filePath.setFont(_font);
 
+        //For Send Button
         _sendButton.setPosition(10, 390);
         _sendButton.setBoxSize(780, 32);
         _sendButton.setPadding(4, 4);
@@ -113,7 +119,7 @@ int main() {
         _sendButton.setBoxOutline(2.0f, sf::Color::Black);
         _sendButton.setFont(_font);
 
-
+        //For Status Text Area (Non Mutable)
         _statusText.setString("Status: ");
         _statusText.setPosition(10, 490);
         _statusText.setBoxSize(780, 32);
@@ -121,11 +127,13 @@ int main() {
         _statusText.setBoxColor(sf::Color::White);
         _statusText.setBoxOutline(2.0f, sf::Color::Black);
         _statusText.setFont(_font);
-        }
+    }
 
     
     isWindowClosed = false;
 
+
+    //Main Loop
     while (window.isOpen())
     {
 
@@ -136,6 +144,7 @@ int main() {
                 window.close();
             }
 
+            //Call GUI Event Handler to Handle Events
             _handler.HandleGuiEvent(&window, &event);
         }
 
@@ -148,10 +157,12 @@ int main() {
             _connectButton.setEnabled(true);
         }
 
+        //Status GUI to StatusString
         _statusText.setString("Status: " + _status);
 
         window.clear(sf::Color::White);
-
+           
+        //Call GUI Handler to Render GUI
         _handler.HandleGuiRender(&window);
 
 		window.display();
@@ -163,10 +174,6 @@ int main() {
     if (sendThread.joinable()) {
         sendThread.join();
     }
-
-
-
-
 }
 
 void connectSocket(std::string ip) {
@@ -210,7 +217,6 @@ void connectSocket(std::string ip) {
             sendThread = std::thread(sendData, clientSocket);
             _status = "Connected";
         }
-
     }
 }
 
@@ -222,6 +228,7 @@ void sendData(std::shared_ptr<sf::TcpSocket> socket)
 
         while (true)
         {
+            //if window is closed then break the loop
             if (isWindowClosed) {
                 break;
             }
@@ -249,6 +256,9 @@ void sendData(std::shared_ptr<sf::TcpSocket> socket)
                 system("CLS");
             }
             */
+
+
+            //Deceide between weather to send file or folder
 
             if (_sendButton.isReleased() == true) {
                 path = _filePath.getString();
