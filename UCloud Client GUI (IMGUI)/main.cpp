@@ -89,6 +89,8 @@ bool isSend = false;
 bool isDisconnectButton = false;
 bool isDisconnected = false;
 
+bool isRecursive;
+
 
 #pragma endregion
 
@@ -157,12 +159,14 @@ int main() {
 
             ImGui::Text("Send Files");
             ImGui::InputText("Path", pathBuffer, 512);
+            ImGui::Checkbox("Recursive", &isRecursive);
             if (ImGui::Button("Send")) {
                 isSendButton = true;
             }
             if (ImGui::Button("Disconnect")) {
                 isDisconnectButton = true;
             }
+
             std::string tempStatus = "Status: ";
             tempStatus.append(imStatus);
             
@@ -447,6 +451,9 @@ void sendFolder(std::shared_ptr<sf::TcpSocket> socket, std::string folderPath)
     {
         if (!file.is_directory())
             filePaths.emplace_back(file);
+        else if(isRecursive && file.is_directory()) {
+            sendFolder(socket, std::filesystem::path(file).string());
+        }
     }
 
     for (auto file : filePaths)
