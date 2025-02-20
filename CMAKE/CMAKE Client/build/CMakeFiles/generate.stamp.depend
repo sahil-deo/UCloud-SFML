@@ -1,0 +1,41 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client/CMakeLists.txt
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client/build/CMakeFiles/3.30.0-rc3/CMakeCCompiler.cmake
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client/build/CMakeFiles/3.30.0-rc3/CMakeCXXCompiler.cmake
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client/build/CMakeFiles/3.30.0-rc3/CMakeRCCompiler.cmake
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client/build/CMakeFiles/3.30.0-rc3/CMakeSystem.cmake
+C:/dev/vcpkg/installed/x64-windows/share/imgui-sfml/ImGui-SFMLConfig-debug.cmake
+C:/dev/vcpkg/installed/x64-windows/share/imgui-sfml/ImGui-SFMLConfig-release.cmake
+C:/dev/vcpkg/installed/x64-windows/share/imgui-sfml/ImGui-SFMLConfig.cmake
+C:/dev/vcpkg/installed/x64-windows/share/imgui/imgui-config.cmake
+C:/dev/vcpkg/installed/x64-windows/share/imgui/imgui-targets-debug.cmake
+C:/dev/vcpkg/installed/x64-windows/share/imgui/imgui-targets-release.cmake
+C:/dev/vcpkg/installed/x64-windows/share/imgui/imgui-targets.cmake
+C:/dev/vcpkg/installed/x64-windows/share/sfml/SFMLConfig.cmake
+C:/dev/vcpkg/installed/x64-windows/share/sfml/SFMLConfigDependencies.cmake
+C:/dev/vcpkg/installed/x64-windows/share/sfml/SFMLConfigVersion.cmake
+C:/dev/vcpkg/installed/x64-windows/share/sfml/SFMLSharedTargets-debug.cmake
+C:/dev/vcpkg/installed/x64-windows/share/sfml/SFMLSharedTargets-release.cmake
+C:/dev/vcpkg/installed/x64-windows/share/sfml/SFMLSharedTargets.cmake
+C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake

@@ -1,0 +1,3 @@
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Server/build/CMakeFiles/server.dir
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Server/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Server/build/CMakeFiles/ZERO_CHECK.dir
