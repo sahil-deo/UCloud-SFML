@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE Client\client.cpp">
+    <ClCompile Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE\CMAKE Client\client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE Client\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE\CMAKE Client\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{D33D5BAB-2601-37D1-94EE-1F95C0A68512}</UniqueIdentifier>
+      <UniqueIdentifier>{FA018D11-4036-3BB7-9C73-D3B60A616B1D}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

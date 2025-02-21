@@ -82,6 +82,9 @@ int main()
     sf::Clock deltaClock;
 
     imStatus = "Not Connected";
+
+    ImVec2 oldWindowSize = {0, 0};
+
     // Main Loop
     while (window.isOpen())
     {
@@ -106,9 +109,25 @@ int main()
         // Call GUI Handler to Render GUI
 
         ImGui::SFML::Update(window, deltaClock.restart());
-        ImGui::GetIO().FontGlobalScale = 2.0f;
 
         ImGui::Begin("UCloud", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
+
+        ImGui::GetIO().FontGlobalScale = 2.0f;
+
+        float guiHeight = ImGui::GetWindowHeight();
+        float guiWidth = ImGui::GetWindowWidth();
+
+        if (guiWidth != (oldWindowSize.x) || guiHeight != (oldWindowSize.y))
+        {
+            oldWindowSize.x = guiWidth;
+            oldWindowSize.y = guiHeight;
+
+            sf::Vector2u temp;
+            temp.x = guiWidth + 20;
+            temp.y = guiHeight + 20;
+
+            window.setSize({temp.x, temp.y});
+        }
 
         if (!isConnected)
         {

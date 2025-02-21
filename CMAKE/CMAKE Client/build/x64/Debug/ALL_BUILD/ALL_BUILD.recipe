@@ -2,13 +2,13 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE Client\build\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE\CMAKE Client\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE Client\build\Debug\client.exe</FullPath>
+      <FullPath>C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE\CMAKE Client\build\Debug\client.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE Client\build\x64\Debug\ALL_BUILD</FullPath>
+      <FullPath>C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE\CMAKE Client\build\x64\Debug\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

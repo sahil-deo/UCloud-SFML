@@ -1,6 +1,6 @@
-^C:\USERS\SHREE\DESKTOP\CODE\C++\UCLOUD SFML\CMAKE CLIENT\BUILD\CMAKEFILES\6280D26E32476B5A41AFAF2262B43619\GENERATE.STAMP.RULE
+^C:\USERS\SHREE\DESKTOP\CODE\C++\UCLOUD SFML\CMAKE\CMAKE CLIENT\BUILD\CMAKEFILES\C3F01DC39B9A1541D6C1682E313BA9CF\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client" "-BC:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client/build/UCLOUD_CLIENT.sln"
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE/CMAKE Client" "-BC:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE/CMAKE Client/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE/CMAKE Client/build/UCLOUD_CLIENT.sln"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

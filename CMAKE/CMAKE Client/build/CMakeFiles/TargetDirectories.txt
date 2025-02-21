@@ -1,3 +1,3 @@
-C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client/build/CMakeFiles/client.dir
-C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE Client/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE/CMAKE Client/build/CMakeFiles/client.dir
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE/CMAKE Client/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/shree/Desktop/Code/c++/UCloud SFML/CMAKE/CMAKE Client/build/CMakeFiles/ZERO_CHECK.dir
