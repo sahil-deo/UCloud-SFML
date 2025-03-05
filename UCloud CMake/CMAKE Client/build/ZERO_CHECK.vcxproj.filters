@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\CMAKE\CMAKE Client\build\CMakeFiles\c3f01dc39b9a1541d6c1682e313ba9cf\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\build\CMakeFiles\e08fff34d0831b0efecab25ea5cc9e35\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{D80733B6-A472-3949-B17E-881F72DEB9B5}</UniqueIdentifier>
+      <UniqueIdentifier>{3783F7B1-FE13-35A4-A1A4-F6EA613DA714}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

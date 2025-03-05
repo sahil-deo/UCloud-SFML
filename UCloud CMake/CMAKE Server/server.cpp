@@ -5,7 +5,6 @@
 #include <thread>
 #include <fstream>
 #include <ctime>
-#include <mutex>
 
 #define _CRT_SECURE_NO_WARNINGS 1
 
@@ -19,7 +18,6 @@ std::string getTimeForFileName();
 // Store Data Functions
 std::string getPassword();
 
-std::mutex clientMutex;
 std::vector<std::thread> clientThreads;
 
 std::string _password;
@@ -72,7 +70,7 @@ void startServer()
             std::cout << "Connected to Client: " << client->getRemoteAddress() << "\n";
             logger << getTime() << ": Connected to Client: " << client->getRemoteAddress() << "\n";
 
-            std::lock_guard<std::mutex> lock(clientMutex);
+            // std::lock_guard<std::mutex> lock(clientMutex);
             clientThreads.emplace_back(std::thread(receiveData, client));
         }
         else
