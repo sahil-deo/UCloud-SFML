@@ -101,13 +101,6 @@ int main()
             // Call GUI Event Handler to Handle Events
         }
 
-        // if (_connectButton.isReleased()) {
-        //_connectButton.setEnabled(false);
-        // connectSocket(_ipBox.getString());
-        //}
-
-        // Call GUI Handler to Render GUI
-
         ImGui::SFML::Update(window, deltaClock.restart());
 
         ImGui::Begin("UCloud", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
@@ -131,7 +124,7 @@ int main()
 
         if (!isConnected)
         {
-            ImGui::Text("Connnect to Server");
+            ImGui::Text("Connect to Server");
             ImGui::InputText("Server Address", ipBuffer, 512);
             ImGui::InputText("Server Password", passBuffer, 512);
             if (ImGui::Button("Connect"))
@@ -139,7 +132,6 @@ int main()
                 isConnectButton = true;
 
                 std::cout << ipBuffer << "\n";
-                std::cout << "Jeres";
                 connectSocket(ipBuffer);
 
                 imStatus = _status;
@@ -202,8 +194,6 @@ void connectSocket(std::string ip)
     clientSocket = std::make_shared<sf::TcpSocket>();
     status = clientSocket->connect(ip, 55555);
 
-    std::cout << "here1";
-
     if (status != sf::Socket::Done)
     {
         // Implement Error
@@ -211,12 +201,10 @@ void connectSocket(std::string ip)
         isConnectButton = false;
         clientSocket->disconnect();
         clientSocket.reset();
-        std::cout << "here2";
     }
     else
     {
         _status = "Connecting.. Authenticating Password";
-        std::cout << "here3";
 
         // Send Password
 
@@ -233,8 +221,6 @@ void connectSocket(std::string ip)
         size_t i;
         clientSocket->receive(data, 1, i);
 
-        std::cout << "here4";
-
         if (data[0] == '0')
         {
             clientSocket->disconnect();
@@ -243,11 +229,9 @@ void connectSocket(std::string ip)
         }
         else if (data[0] == '1')
         {
-            std::cout << "here5";
 
             _status = "Connected";
             isConnected = true;
-            std::cout << "here51";
             sendThread = std::thread(sendData, clientSocket);
         }
     }
@@ -255,10 +239,8 @@ void connectSocket(std::string ip)
 
 void sendData(std::shared_ptr<sf::TcpSocket> socket)
 {
-    std::cout << "here52";
     try
     {
-        std::cout << "here6";
 
         while (true)
         {
@@ -270,29 +252,6 @@ void sendData(std::shared_ptr<sf::TcpSocket> socket)
 
             std::string path = "";
 
-            /*
-            std::string dataType = "1";
-            //std::cout << "Send Data: \n";
-            //std::cout << "1. File\n";
-            //std::cout << "2. Folder\n";
-            //std::getline(std::cin, dataType);
-
-            std::cin.clear();
-            std::cin.sync();
-            if (dataType == "1")
-            {
-                sendFile(socket);
-            }
-            else if (dataType == "2")
-            {
-                //sendFolder(socket);
-            }
-            else {
-                system("CLS");
-            }
-            */
-
-            // Deceide between weather to send file or folder
             if (isDisconnectButton)
             {
                 isDisconnectButton = false;
@@ -305,7 +264,6 @@ void sendData(std::shared_ptr<sf::TcpSocket> socket)
 
             if (isSendButton)
             {
-                std::cout << "here7";
 
                 isSendButton = false;
                 path = pathBuffer;
@@ -350,24 +308,6 @@ void sendFile(std::shared_ptr<sf::TcpSocket> socket, std::string filePath)
 
     std::cin.clear();
     std::cin.sync();
-
-    //    std::cout << "Enter File Path: ";
-    //    std::getline(std::cin, filePath);
-    /*
-    while (true) {
-
-        if (_sendButton.isReleased() == true) {
-            filePath = _filePath.getString();
-
-            std::filesystem::path checkPath(filePath);
-
-            break;
-        }
-        else {
-            continue;
-        }
-    }
-    */
 
     std::ifstream file(filePath, std::ios_base::binary | std::ios_base::ate);
 
