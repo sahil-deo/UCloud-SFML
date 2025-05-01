@@ -4,6 +4,9 @@
     <ClCompile Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\tinyfiledialogs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\CMakeLists.txt" />

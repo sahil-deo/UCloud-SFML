@@ -87,6 +87,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/dev/vcpkg/installed/x64-windows/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -109,10 +110,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -132,7 +133,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>C:\dev\vcpkg\installed\x64-windows\debug\lib\sfml-network-d.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\ImGui-SFML.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\sfml-graphics-d.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\sfml-window-d.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\sfml-system-d.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\imguid.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>comdlg32.lib;ole32.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\sfml-network-d.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\ImGui-SFML.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\sfml-graphics-d.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\sfml-window-d.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\sfml-system-d.lib;C:\dev\vcpkg\installed\x64-windows\debug\lib\imguid.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -147,6 +148,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/dev/vcpkg/installed/x64-windows/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -170,10 +172,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -193,7 +195,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>C:\dev\vcpkg\installed\x64-windows\lib\sfml-network.lib;C:\dev\vcpkg\installed\x64-windows\lib\ImGui-SFML.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-graphics.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-window.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-system.lib;C:\dev\vcpkg\installed\x64-windows\lib\imgui.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>comdlg32.lib;ole32.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-network.lib;C:\dev\vcpkg\installed\x64-windows\lib\ImGui-SFML.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-graphics.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-window.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-system.lib;C:\dev\vcpkg\installed\x64-windows\lib\imgui.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -208,6 +210,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/dev/vcpkg/installed/x64-windows/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -231,10 +234,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -254,7 +257,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>C:\dev\vcpkg\installed\x64-windows\lib\sfml-network.lib;C:\dev\vcpkg\installed\x64-windows\lib\ImGui-SFML.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-graphics.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-window.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-system.lib;C:\dev\vcpkg\installed\x64-windows\lib\imgui.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>comdlg32.lib;ole32.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-network.lib;C:\dev\vcpkg\installed\x64-windows\lib\ImGui-SFML.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-graphics.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-window.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-system.lib;C:\dev\vcpkg\installed\x64-windows\lib\imgui.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -269,6 +272,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/dev/vcpkg/installed/x64-windows/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -291,10 +295,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\inc;C:\dev\vcpkg\installed\x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -314,7 +318,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>C:\dev\vcpkg\installed\x64-windows\lib\sfml-network.lib;C:\dev\vcpkg\installed\x64-windows\lib\ImGui-SFML.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-graphics.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-window.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-system.lib;C:\dev\vcpkg\installed\x64-windows\lib\imgui.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>comdlg32.lib;ole32.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-network.lib;C:\dev\vcpkg\installed\x64-windows\lib\ImGui-SFML.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-graphics.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-window.lib;C:\dev\vcpkg\installed\x64-windows\lib\sfml-system.lib;C:\dev\vcpkg\installed\x64-windows\lib\imgui.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -386,6 +390,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\client.cpp" />
+    <ClCompile Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\tinyfiledialogs.c" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\shree\Desktop\Code\c++\UCloud SFML\UCloud CMake\CMAKE Client\build\ZERO_CHECK.vcxproj">
