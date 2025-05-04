@@ -356,6 +356,7 @@ void sendFile(std::shared_ptr<sf::TcpSocket> socket, std::string filePath)
         return;
     }
     _status = "Reading Data";
+    imStatus = _status;
 
     std::streamsize streamSize = file.tellg();
     std::vector<char> buffer(streamSize);
@@ -376,6 +377,7 @@ void sendFile(std::shared_ptr<sf::TcpSocket> socket, std::string filePath)
     }
 
     _status = "Sending Data";
+    imStatus = _status;
 
     char ack[3];
     std::size_t recv = 0;
