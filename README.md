@@ -1,6 +1,6 @@
-# UCloud: A Lightweight Home Network Backup Server
+# UCloud: A Lightweight Remote Backup Server
 
-UCloud is a multithreaded networking application built entirely in C++ using SFML sockets. Designed as a home network backup server, UCloud allows multiple clients to connect to a central server to upload files and folders seamlessly.  
+UCloud is a multithreaded remote backup client-server application built entirely in C++ using SFML sockets. Designed as a remote / home network backup server, UCloud allows multiple clients to connect to a central server to upload files and folders seamlessly.  
 
 ## Features  
 - **Client-Server Architecture**: A single main server can manage multiple simultaneous client connections.  
