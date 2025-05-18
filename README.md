@@ -13,25 +13,6 @@
 - 🔌 **SFML Sockets** – uses TCP sockets for communication  
 - 📋 **Status display** – connection and file transfer states shown live in GUI  
 
-## 📁 Project Structure
-```
-UCloud-SFML/
-├── client/
-│   ├── main.cpp            # GUI client application logic
-│   ├── Client.hpp/.cpp     # Client connection and file transfer logic
-├── server/
-│   ├── main.cpp            # Entry point for server
-│   ├── Server.hpp/.cpp     # Handles clients, authentication, logging
-├── include/
-│   └── common.hpp          # Shared constants/utilities
-├── logs/
-│   └── [timestamp].txt     # Auto-generated connection logs
-├── resources/
-│   └── ImGui, fonts etc.   # GUI dependencies
-├── CMakeLists.txt
-└── README.md
-```
-
 ## 🛠️ Build Instructions
 
 ### Requirements
